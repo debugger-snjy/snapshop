@@ -4,6 +4,7 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:snapshop/provider/slider_provider.dart';
+import 'package:snapshop/screens/login_screen.dart';
 import 'package:snapshop/screens/onboarding_screen.dart';
 import 'package:snapshop/screens/splash_screen.dart';
 import 'package:snapshop/utils/app_routes.dart';
@@ -25,7 +26,8 @@ class MyApp extends StatelessWidget {
       child: MaterialApp(
         routes: {
           AppRoutes.defaultPage: (context) => const SplashScreen(),
-          AppRoutes.onboardingScreen : (context) => const OnBoardingScreen()
+          AppRoutes.onboardingScreen : (context) => const OnBoardingScreen(),
+          AppRoutes.loginPage: (context)=> const LoginScreen()
         },
       ),
     );

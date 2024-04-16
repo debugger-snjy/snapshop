@@ -8,11 +8,11 @@ class DarkButton extends StatelessWidget {
 
   const DarkButton(
       {super.key,
-      required this.radius,
-      required this.text,
-      required this.actions,
-      required this.buttonHeight,
-      required this.buttonWidth});
+        required this.radius,
+        required this.text,
+        required this.actions,
+        required this.buttonHeight,
+        required this.buttonWidth});
 
   @override
   Widget build(BuildContext context) {

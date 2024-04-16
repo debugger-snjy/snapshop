@@ -87,8 +87,12 @@ class OnBoardingScreen extends StatelessWidget {
                           ),
                           actions: () {
                             if (sliderModel.counter == 2) {
-                              Navigator.popAndPushNamed(
-                                  context, AppRoutes.loginPage);
+
+                              // TODO : Uncomment the below line
+                              // Navigator.popAndPushNamed(context, AppRoutes.loginPage);
+
+                              // Adding Navigator to HomePage for testing
+                              Navigator.popAndPushNamed(context, AppRoutes.homePage);
                             } else {
                               sliderModel.updateScreen();
                             }

@@ -1,5 +1,4 @@
 class StringResources {
-
   static const appname = "SnapShop";
 
   // Image Path for the App Icon
@@ -28,4 +27,13 @@ class StringResources {
 
   // Strings for the Next button Text in Splash Screen
   static const splashScreenNextBtnText = ["Next", "Get Started", "Get Started"];
+
+  // Strings for Main Categories in Application
+  static const appMainCategory = ["All", "Woman", "Man", "Kids", "Others"];
+
+  // SVG Image Path for the Shopping Icon
+  static const shoppingIcon = "lib/assets/icons/bag_icon.svg";
+
+  // SVG Image Path for the Shopping Icon
+  static const favoriteIcon = "lib/assets/icons/favorite_icon.svg";
 }

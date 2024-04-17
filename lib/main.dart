@@ -5,7 +5,6 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:snapshop/provider/slider_provider.dart';
 import 'package:snapshop/screens/create_account_screen.dart';
-import 'package:snapshop/screens/create_new_password.dart';
 import 'package:snapshop/screens/login_screen.dart';
 import 'package:snapshop/screens/registration_success_screen.dart';
 import 'package:snapshop/screens/onboarding_screen.dart';

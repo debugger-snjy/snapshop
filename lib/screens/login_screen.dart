@@ -67,7 +67,15 @@ class _LoginScreenState extends State<LoginScreen> {
                       radius: 10, text: const Text(Texts.signMessage),
                       actions: (){
                         if (_formKey.currentState!.validate()) {
-
+                          if(emailTextEditingController.text=="admin@gmail.com" && passwordTextEditingController.text=="admin"){
+                            Navigator.popAndPushNamed(context, AppRoutes.homePage);
+                          }else{
+                            ScaffoldMessenger.of(context).showSnackBar(
+                              const SnackBar(
+                                content: Text('Invalid Credentials.'),
+                              ),
+                            );
+                          }
                         } else {
                         // Form is not valid, display validation errors
                         ScaffoldMessenger.of(context).showSnackBar(

@@ -136,8 +136,8 @@ class _HomePageState extends State<HomePage> {
             itemCount: allProducts.length, // Number of items in the grid
             gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
               crossAxisCount: 2, // Number of columns
-              crossAxisSpacing: 5.0, // Spacing between columns
-              mainAxisSpacing: 5.0, // Spacing between rows
+              crossAxisSpacing: 10.0, // Spacing between columns
+              mainAxisSpacing: 10.0, // Spacing between rows
               childAspectRatio: 0.7, // Ratio of item width to item height
             ),
             itemBuilder: (BuildContext context, int index) {

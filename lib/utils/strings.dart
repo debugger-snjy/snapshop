@@ -84,4 +84,13 @@ class StringResources {
 
   // SVG Image Path for the Shopping Icon
   static const favoriteIcon = "lib/assets/icons/favorite_icon.svg";
+
+  // Icons Image File Path Lists for all the Items in the Bottom Navigation
+  static const List allIcons = [
+    "lib/assets/icons/home_icon.svg",
+    "lib/assets/icons/category_icon.svg",
+    "lib/assets/icons/heart_icon.svg",
+    "lib/assets/icons/shopping_bag_icon.svg",
+    "lib/assets/icons/user_icon.svg",
+  ];
 }

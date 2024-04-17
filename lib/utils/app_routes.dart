@@ -8,4 +8,5 @@ class AppRoutes{
   static const String loginPage = "/login";
   static const String registerPage= "/register";
   static const String successPage= "/success";
+  static const String categoryPage = "/categories";
 }

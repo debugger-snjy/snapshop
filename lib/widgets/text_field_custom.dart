@@ -1,16 +1,18 @@
 import 'package:flutter/material.dart';
 
 class CustomTextField extends StatelessWidget {
-  const CustomTextField({super.key, required this.controller, required this.radius, required this.text});
+  const CustomTextField({super.key, required this.controller,
+    required this.radius, required this.text, this.validator});
   final TextEditingController controller;
   final double radius;
+  final String? Function(String?)? validator;
   final String text;
   @override
   Widget build(BuildContext context) {
-    return Container(
+    return SizedBox(
       width: 350,
-      child: TextField(
-
+      child: TextFormField(
+        validator: validator ,
         controller: controller,
         decoration:
 

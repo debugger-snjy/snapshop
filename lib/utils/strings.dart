@@ -1,3 +1,5 @@
+import 'package:flutter/material.dart';
+
 class StringResources {
 
   static const appname = "SnapShop";
@@ -28,4 +30,22 @@ class StringResources {
 
   // Strings for the Next button Text in Splash Screen
   static const splashScreenNextBtnText = ["Next", "Get Started", "Get Started"];
+
+  static const createAccountMessage= "Create Your Account";
+  static const createAccountMiscText="Which part of your country you call home?";
+  static const usernameFieldText="Username";
+  // String for accepting terms and policy section
+  static const accepted="I accepted  ";
+  static const termsAndPolicy="Terms & Privacy Policy";
+  // String for if already account
+  static const alreadyAccount="Already have an Account ?";
+  static const registrationSuccess="Success!";
+  static const registrationSuccessMessage="You have successfully registered in our app and can start working in it";
+  static const continueMessage="Continue";
+  // Change Password
+  static const newPassword="New Password";
+  static const confirmPassword="Confirm New Password";
+  static const passwordChangeInstruction1="Your password must different from previous password.";
+  static const passwordChangeInstruction2="Your password needs to be at least 8 characters long. Includes some words and phrases to make it even safer";
+
 }

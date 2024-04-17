@@ -1,13 +1,14 @@
 import 'package:flutter/material.dart';
 
 class CustomPasswordField extends StatefulWidget {
-  const CustomPasswordField({super.key, required this.controller, required this.radius, required this.text});
+  const CustomPasswordField({super.key, required this.controller, required this.radius, required this.text, this.validator, this.onchange});
 
 
   final TextEditingController controller;
   final double radius;
   final String text;
-
+  final String? Function(String?)? validator;
+  final String? Function(String?)? onchange;
   @override
   State<CustomPasswordField> createState() => _CustomPasswordFieldState();
 
@@ -23,12 +24,13 @@ class _CustomPasswordFieldState extends State<CustomPasswordField> {
   }
   @override
   Widget build(BuildContext context) {
-    return Container(
+    return SizedBox(
       width: 350,
-      child: TextField(
+      child: TextFormField(
         obscureText: passwordVisible,
         controller: widget.controller,
-
+        validator: widget.validator ,
+        onChanged: widget.onchange,
         decoration: InputDecoration(
 
           border: OutlineInputBorder(
@@ -46,6 +48,7 @@ class _CustomPasswordFieldState extends State<CustomPasswordField> {
                 },
               );
             },
+
           ),
         ),
       ),

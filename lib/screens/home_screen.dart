@@ -3,7 +3,7 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:provider/provider.dart';
 import 'package:snapshop/models/category.dart';
 import 'package:snapshop/models/product.dart';
-import 'package:snapshop/provider/breadcrumb_provider.dart';
+import 'package:snapshop/provider/categorytab_provider.dart';
 import 'package:snapshop/utils/strings.dart';
 import 'package:snapshop/widgets/bottom_navigation.dart';
 
@@ -111,14 +111,14 @@ class _HomePageState extends State<HomePage> {
         ),
 
         // Adding the Main Categories BreadCrumb
-        Consumer<BreadCrumbNavigator>(
+        Consumer<CategoryTabNavigator>(
           builder: (context, value, child) => Container(
             height: 65,
             margin: const EdgeInsets.symmetric(vertical: 0, horizontal: 20),
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(20),
             ),
-            child: value.showBreadCrumb(),
+            child: value.showCategoryTab(),
           ),
         ),
 

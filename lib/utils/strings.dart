@@ -54,4 +54,21 @@ class StringResources {
   static const miscPhone="Your Phone: ******421432";
   static const phoneNumber="Phone Number";
 
+  // My Account
+  static const myAccount="My Account";
+  static const general="General";
+  static const accountDetails="Account Details";
+  static const accountDetailsDescription="Edit your account information";
+  static const paymentMethod="Payment Method";
+  static const paymentMethodDescription="Add your credit or debit Card";
+  static const deliveryAddresses="Delivery Addresses";
+  static const deliveryAddressesDescription="Edit or add new address";
+  static const securityAndPassword="Security & Password";
+  static const securityAndPasswordDescription="Edit your password";
+  static const notitfications="Notifications";
+  static const notificationsDescription="Manage your notifications";
+  static const language="Language";
+  static const privacyAndPolicy="Privacy & Policy";
+  static const contactUs="Contact Us";
+
 }

@@ -4,8 +4,8 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:snapshop/provider/categorytab_provider.dart';
-import 'package:snapshop/provider/navigation_provider.dart';
 import 'package:snapshop/provider/slider_provider.dart';
+import 'package:snapshop/screens/category_screen.dart';
 import 'package:snapshop/screens/home_screen.dart';
 import 'package:snapshop/screens/login_screen.dart';
 import 'package:snapshop/screens/onboarding_screen.dart';
@@ -25,7 +25,6 @@ class MyApp extends StatelessWidget {
     return MultiProvider(
       providers: [
         ChangeNotifierProvider(create: (context) => SliderController()),
-        ChangeNotifierProvider(create: (context) => NavigatorProvider()),
         ChangeNotifierProvider(create: (context) => CategoryTabNavigator())
       ],
       child: MaterialApp(
@@ -33,7 +32,8 @@ class MyApp extends StatelessWidget {
           AppRoutes.defaultPage: (context) => const SplashScreen(),
           AppRoutes.onboardingScreen: (context) => const OnBoardingScreen(),
           AppRoutes.loginPage: (context) => const LoginScreen(),
-          AppRoutes.homePage: (context) => const HomePage()
+          AppRoutes.homePage: (context) => const HomePage(),
+          AppRoutes.categoryPage: (context) => const CategoryPage()
         },
       ),
     );

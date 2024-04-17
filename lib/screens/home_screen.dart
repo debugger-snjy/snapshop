@@ -4,8 +4,8 @@ import 'package:provider/provider.dart';
 import 'package:snapshop/models/category.dart';
 import 'package:snapshop/models/product.dart';
 import 'package:snapshop/provider/categorytab_provider.dart';
+import 'package:snapshop/utils/app_routes.dart';
 import 'package:snapshop/utils/strings.dart';
-import 'package:snapshop/widgets/bottom_navigation.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -56,14 +56,13 @@ class _HomePageState extends State<HomePage> {
     return Scaffold(
       // App Bar of the Application
       appBar: AppBar(
-          // Adding this to remove the pink or purple color on scrolling the grid items
-          scrolledUnderElevation: 0,
-          title: const Text(StringResources.appname),
+        // Adding this to remove the pink or purple color on scrolling the grid items
+        scrolledUnderElevation: 0,
+        title: const Text(StringResources.appname),
       ),
 
       // Main Content of the Application
       body: Column(children: [
-
         // Adding the Search Bar with the icons
         Container(
           margin: const EdgeInsets.symmetric(horizontal: 18),
@@ -82,11 +81,14 @@ class _HomePageState extends State<HomePage> {
 
               // Adding the Search Icon
               prefixIcon:
-                  IconButton(onPressed: () {}, icon: const Icon(Icons.search)),
+              IconButton(onPressed: () {}, icon: const Icon(Icons.search)),
 
               // Adding the Camera & QR Scanner Icons
               suffixIcon: SizedBox(
-                width: MediaQuery.of(context).size.width * 0.25,
+                width: MediaQuery
+                    .of(context)
+                    .size
+                    .width * 0.25,
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.end,
                   children: [
@@ -112,14 +114,15 @@ class _HomePageState extends State<HomePage> {
 
         // Adding the Main Categories BreadCrumb
         Consumer<CategoryTabNavigator>(
-          builder: (context, value, child) => Container(
-            height: 65,
-            margin: const EdgeInsets.symmetric(vertical: 0, horizontal: 20),
-            decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(20),
-            ),
-            child: value.showCategoryTab(),
-          ),
+          builder: (context, value, child) =>
+              Container(
+                height: 65,
+                margin: const EdgeInsets.symmetric(vertical: 0, horizontal: 20),
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(20),
+                ),
+                child: value.showCategoryTab(),
+              ),
         ),
 
         // Adding the Space
@@ -129,7 +132,10 @@ class _HomePageState extends State<HomePage> {
 
         // Rendering the Product Items
         Container(
-          height: MediaQuery.of(context).size.height * 0.618,
+          height: MediaQuery
+              .of(context)
+              .size
+              .height * 0.618,
           decoration: BoxDecoration(borderRadius: BorderRadius.circular(20)),
           margin: const EdgeInsets.symmetric(horizontal: 20, vertical: 0),
           child: GridView.builder(
@@ -144,30 +150,30 @@ class _HomePageState extends State<HomePage> {
               // You can replace Container with any widget you want for each grid item
               return Container(
                 decoration:
-                    BoxDecoration(borderRadius: BorderRadius.circular(20)),
+                BoxDecoration(borderRadius: BorderRadius.circular(20)),
                 // color: Colors.blue, // Just for demonstration
                 child: Center(
                   child: Stack(
                     fit: StackFit.expand,
                     children: [
-
                       // Background Image
                       ShaderMask(
-                        shaderCallback: (rect) => const LinearGradient(
-                          begin: Alignment.bottomCenter,
-                          end: Alignment.center,
-                          colors: [
-                            Color.fromRGBO(255, 255, 255, 0.1),
-                            Colors.transparent,
-                          ],
-                        ).createShader(rect),
+                        shaderCallback: (rect) =>
+                            const LinearGradient(
+                              begin: Alignment.bottomCenter,
+                              end: Alignment.center,
+                              colors: [
+                                Color.fromRGBO(255, 255, 255, 0.1),
+                                Colors.transparent,
+                              ],
+                            ).createShader(rect),
                         blendMode: BlendMode.darken,
                         child: Container(
                           decoration: BoxDecoration(
                             borderRadius: BorderRadius.circular(20),
                             image: DecorationImage(
                               image:
-                                  AssetImage(allProducts[index].productImage),
+                              AssetImage(allProducts[index].productImage),
                               fit: BoxFit.cover,
                               colorFilter: const ColorFilter.mode(
                                   Colors.black26, BlendMode.darken),
@@ -193,7 +199,8 @@ class _HomePageState extends State<HomePage> {
                                 height: 5,
                               ),
                               Text(
-                                "₹ ${allProducts[index].productPrice.toString()}",
+                                "₹ ${allProducts[index].productPrice
+                                    .toString()}",
                                 style: TextStyle(
                                     color: Colors.white,
                                     fontSize: 16,
@@ -201,8 +208,7 @@ class _HomePageState extends State<HomePage> {
                               )
                             ],
                             crossAxisAlignment: CrossAxisAlignment.start,
-                          )
-                      ),
+                          )),
 
                       // Icons for the Shopping Bag
                       Positioned(
@@ -210,12 +216,14 @@ class _HomePageState extends State<HomePage> {
                         right: 12,
                         child: Container(
                             decoration: BoxDecoration(
-                                borderRadius: BorderRadius.circular(30), color: Colors.black),
+                                borderRadius: BorderRadius.circular(30),
+                                color: Colors.black),
                             padding: const EdgeInsets.all(10),
-                            child: SvgPicture.asset(StringResources.shoppingIcon,
+                            child: SvgPicture.asset(
+                                StringResources.shoppingIcon,
                                 height: 15,
-                                colorFilter:
-                                const ColorFilter.mode(Colors.white, BlendMode.srcIn),
+                                colorFilter: const ColorFilter.mode(
+                                    Colors.white, BlendMode.srcIn),
                                 width: 15)),
                       ),
 
@@ -225,15 +233,16 @@ class _HomePageState extends State<HomePage> {
                         right: 12,
                         child: Container(
                             decoration: BoxDecoration(
-                                borderRadius: BorderRadius.circular(30), color: Colors.black),
+                                borderRadius: BorderRadius.circular(30),
+                                color: Colors.black),
                             padding: const EdgeInsets.all(10),
-                            child: SvgPicture.asset(StringResources.favoriteIcon,
+                            child: SvgPicture.asset(
+                                StringResources.favoriteIcon,
                                 height: 15,
-                                colorFilter:
-                                const ColorFilter.mode(Colors.white, BlendMode.srcIn),
+                                colorFilter: const ColorFilter.mode(
+                                    Colors.white, BlendMode.srcIn),
                                 width: 15)),
                       )
-
                     ],
                   ),
                 ),
@@ -241,9 +250,93 @@ class _HomePageState extends State<HomePage> {
             },
           ),
         )
-
       ]),
-      bottomNavigationBar: const BottomNavbar(),
+
+      // Bottom Navigation Bar
+      bottomNavigationBar: SafeArea(
+        maintainBottomViewPadding: true,
+        minimum: const EdgeInsets.symmetric(horizontal: 16, vertical: 16),
+        child: Row(
+          crossAxisAlignment: CrossAxisAlignment.center,
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: [
+
+            // Active Home Icon
+            InkWell(
+              onTap: () {
+                // Nothing should happen if the User is in Home Screen
+              }, // Use a lambda function
+              child: Container(
+                  decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(30),
+                      color: Colors.black),
+                  padding: const EdgeInsets.all(10),
+                  child: SvgPicture.asset(StringResources.allIcons[0],
+                      height: 30,
+                      colorFilter:
+                      const ColorFilter.mode(Colors.white, BlendMode.srcIn),
+                      width: 30)),
+            ),
+
+            // Category Icon
+            InkWell(
+              onTap: () {
+                Navigator.pushNamed(context, AppRoutes.categoryPage);
+              },
+              child: Container(
+                // padding: const EdgeInsets.all(10),
+                  child: SvgPicture.asset(StringResources.allIcons[1],
+                      height: 30,
+                      colorFilter:
+                      const ColorFilter.mode(Colors.black, BlendMode.srcIn),
+                      width: 30)),
+            ),
+
+            // Heart Icon
+            InkWell(
+              onTap: () {
+
+              },
+              child: Container(
+                // padding: const EdgeInsets.all(10),
+                  child: SvgPicture.asset(StringResources.allIcons[2],
+                      height: 30,
+                      colorFilter:
+                      const ColorFilter.mode(Colors.black, BlendMode.srcIn),
+                      width: 30)),
+            ),
+
+            // Shopping Bag Icon
+            InkWell(
+              onTap: () {
+
+              },
+              child: Container(
+                // padding: const EdgeInsets.all(10),
+                  child: SvgPicture.asset(StringResources.allIcons[3],
+                      height: 30,
+                      colorFilter:
+                      const ColorFilter.mode(Colors.black, BlendMode.srcIn),
+                      width: 30)),
+            ),
+
+            // User Icon
+            InkWell(
+              onTap: () {
+
+              },
+              child: Container(
+                // padding: const EdgeInsets.all(10),
+                  child: SvgPicture.asset(StringResources.allIcons[4],
+                      height: 30,
+                      colorFilter:
+                      const ColorFilter.mode(Colors.black, BlendMode.srcIn),
+                      width: 30)),
+            ),
+
+          ],
+        ),
+      ),
     );
   }
 }

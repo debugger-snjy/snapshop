@@ -17,6 +17,7 @@ class NavigatorProvider extends ChangeNotifier {
   NavigatorProvider() {
     allItems = [];
     addItems();
+    activeIcon(0);
   }
 
   addItems(){
@@ -27,7 +28,7 @@ class NavigatorProvider extends ChangeNotifier {
             activeIcon(i);
           },
           child: Container(
-              padding: const EdgeInsets.all(10),
+              // padding: const EdgeInsets.all(10),
               child: SvgPicture.asset(allIcons[i],
                   height: 30,
                   colorFilter:
@@ -58,7 +59,4 @@ class NavigatorProvider extends ChangeNotifier {
         ));
     notifyListeners();
   }
-
-
-// Function that return All the Items of the Bottom Navigation
 }

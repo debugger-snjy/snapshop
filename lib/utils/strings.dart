@@ -71,4 +71,17 @@ class StringResources {
   static const privacyAndPolicy="Privacy & Policy";
   static const contactUs="Contact Us";
 
+  // ------------------
+  // Sanjay Sukhwani
+  // ------------------
+  // Adding the My String that I Used in the home_screen branch
+
+  // Strings for Main Categories in Application
+  static const appMainCategory = ["All", "Woman", "Man", "Kids", "Others"];
+
+  // SVG Image Path for the Shopping Icon
+  static const shoppingIcon = "lib/assets/icons/bag_icon.svg";
+
+  // SVG Image Path for the Shopping Icon
+  static const favoriteIcon = "lib/assets/icons/favorite_icon.svg";
 }

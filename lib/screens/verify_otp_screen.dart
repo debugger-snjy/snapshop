@@ -3,8 +3,6 @@ import 'package:flutter_otp_text_field/flutter_otp_text_field.dart';
 import 'package:snapshop/utils/strings.dart';
 import 'package:snapshop/widgets/button_dart_widget.dart';
 
-import '../constants/texts.dart';
-
 
 class VerifyOtpScreen extends StatefulWidget {
   const VerifyOtpScreen({super.key});

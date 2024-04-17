@@ -47,5 +47,11 @@ class StringResources {
   static const confirmPassword="Confirm New Password";
   static const passwordChangeInstruction1="Your password must different from previous password.";
   static const passwordChangeInstruction2="Your password needs to be at least 8 characters long. Includes some words and phrases to make it even safer";
+  //Forgot Password
+  static const forgotPassword="Forgot Password";
+  static const forgotPasswordInstructions="Don't worry! it happens. Please select your email or phone number so we can send you a code.";
+  static const miscEmail="Your Email: *******hhst@gmail.com";
+  static const miscPhone="Your Phone: ******421432";
+  static const phoneNumber="Phone Number";
 
 }

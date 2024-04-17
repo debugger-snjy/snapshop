@@ -5,10 +5,12 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:snapshop/provider/slider_provider.dart';
 import 'package:snapshop/screens/create_account_screen.dart';
+import 'package:snapshop/screens/forgot_password_screen.dart';
 import 'package:snapshop/screens/login_screen.dart';
 import 'package:snapshop/screens/registration_success_screen.dart';
 import 'package:snapshop/screens/onboarding_screen.dart';
 import 'package:snapshop/screens/splash_screen.dart';
+import 'package:snapshop/screens/verify_otp_screen.dart';
 import 'package:snapshop/utils/app_routes.dart';
 
 void main() {
@@ -30,7 +32,7 @@ class MyApp extends StatelessWidget {
         routes: {
           AppRoutes.defaultPage: (context) => const SplashScreen(),
           AppRoutes.onboardingScreen : (context) => const OnBoardingScreen(),
-          AppRoutes.loginPage: (context)=> const LoginScreen(),
+          AppRoutes.loginPage: (context)=> const VerifyOtpScreen(),
           AppRoutes.registerPage:(context)=> const CreateAccount(),
           AppRoutes.successPage:(context)=> const SuccessScreen(),
         },

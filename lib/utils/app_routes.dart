@@ -6,4 +6,6 @@ class AppRoutes{
   static const String defaultPage = "/";
   static const String onboardingScreen = "/onboardscreen";
   static const String loginPage = "/login";
+  static const String registerPage= "/register";
+  static const String successPage= "/success";
 }

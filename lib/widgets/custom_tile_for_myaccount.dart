@@ -13,28 +13,43 @@ class CustomTile extends StatelessWidget {
     return Container(
       child: Column(
         children: [
-          Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            crossAxisAlignment: CrossAxisAlignment.center,
-            children: [
-                   Row(
-                     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                     crossAxisAlignment: CrossAxisAlignment.start,
-                     children: [
-                       image,
-                       Column(
-                         crossAxisAlignment: CrossAxisAlignment.start,
-                         children: [
-                           Text(title),
-                           Text(subtitle)
-                         ],
-                       ),
-                     ],
-                   ),
+          Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 10,vertical: 10),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: [
+                     Row(
+                       mainAxisAlignment: MainAxisAlignment.spaceAround,
+                       crossAxisAlignment: CrossAxisAlignment.center,
+                       children: [
+                         image,
+                         const SizedBox(width: 20,),
+                         Column(
+                           crossAxisAlignment: CrossAxisAlignment.start,
+                           mainAxisAlignment: MainAxisAlignment.center,
+                           children: [
+                             Text(title,
+                             style: const TextStyle(
+                               fontWeight: FontWeight.bold
+                             ),
+                             ),
+                             if (subtitle!="") Text(subtitle,
+                             style: const TextStyle(
+                               color: Colors.black54
+                             ),
+                             ),
 
-                   const Icon(Icons.arrow_forward_ios)
 
-            ],
+                           ],
+                         ),
+                       ],
+                     ),
+
+                     const Icon(Icons.arrow_forward_ios)
+
+              ],
+            ),
           ),
           Divider()
         ],

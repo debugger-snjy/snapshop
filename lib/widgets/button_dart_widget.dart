@@ -25,10 +25,11 @@ class DarkButton extends StatelessWidget {
         style: TextButton.styleFrom(
             backgroundColor: Colors.black,
             elevation: 10,
-            textStyle: const TextStyle(color: Colors.white),
+
             shape: RoundedRectangleBorder(
                 borderRadius: BorderRadius.circular(radius))),
-        child: text,
+
+        child: Text(text.data!,style: const TextStyle(color: Colors.white),),
       ),
     );
   }

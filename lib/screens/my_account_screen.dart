@@ -3,6 +3,7 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:snapshop/utils/strings.dart';
 import 'package:snapshop/widgets/custom_app_bar.dart';
 import 'package:snapshop/widgets/custom_tile_for_myaccount.dart';
+import 'package:snapshop/widgets/logout_button.dart';
 
 class MyAccount extends StatefulWidget {
   const MyAccount({super.key});
@@ -23,7 +24,13 @@ class _MyAccountState extends State<MyAccount> {
       body: Container(
          child: ListView(
            children: [
-             const ListTile(title: Text(StringResources.general),),
+             const ListTile(title:
+             Text(
+                 StringResources.general,
+                 style: TextStyle(
+                   fontWeight: FontWeight.bold
+                 ),
+             ),),
              CustomTile(
                  image: SvgPicture.asset('lib/assets/icons/contact_icon.svg'),
                  title: StringResources.accountDetails,
@@ -41,7 +48,14 @@ class _MyAccountState extends State<MyAccount> {
                  image: SvgPicture.asset('lib/assets/icons/security_and_password.svg'),
                  title: StringResources.securityAndPassword,
                  subtitle:StringResources.securityAndPasswordDescription),
-             const ListTile(title: Text('Settings'),),
+             const ListTile(
+               title: Text('Settings',
+                 style: TextStyle(
+                     fontWeight: FontWeight.bold
+                 ),
+               ),
+
+             ),
              CustomTile(
                  image: SvgPicture.asset('lib/assets/icons/notifications_icon.svg'),
                  title: StringResources.notitfications,
@@ -57,7 +71,8 @@ class _MyAccountState extends State<MyAccount> {
              CustomTile(
                  image: SvgPicture.asset('lib/assets/icons/contact_us_icon.svg'),
                  title: StringResources.contactUs,
-                 subtitle: "")
+                 subtitle: ""),
+             LogoutButton(),
            ],
          ),
       ),

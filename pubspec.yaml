@@ -38,6 +38,7 @@ dependencies:
   provider: ^6.1.2
   flutter_svg: ^2.0.10+1
   flutter_otp_text_field: ^1.1.3+2
+  flutter_credit_card: ^4.0.1
 
 dev_dependencies:
   flutter_test:
@@ -67,7 +68,7 @@ flutter:
     - lib/assets/Images/
     - lib/assets/Products/
     - lib/assets/Categories/
-
+    - lib/assets/PaymentCardDesign/
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware
 

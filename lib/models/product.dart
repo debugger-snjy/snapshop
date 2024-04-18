@@ -5,6 +5,7 @@ class Product {
   late String productDesc;
   late double productPrice;
   late String productImage;
+  late List<String?> onlyProductImages;
   late ProductCategory productCategory;
 
   Product({
@@ -12,6 +13,7 @@ class Product {
     required this.productDesc,
     required this.productPrice,
     required this.productImage,
+    required this.onlyProductImages,
     required this.productCategory,
   });
 }

@@ -19,6 +19,7 @@ class _HomePageState extends State<HomePage> {
   List<Product> allProducts = [
     Product(
         productName: "Jacket",
+        onlyProductImages:[],
         productDesc: "This is Jacket",
         productPrice: 120,
         productImage: "lib/assets/Products/jacket.png",
@@ -27,6 +28,7 @@ class _HomePageState extends State<HomePage> {
             categoryName: "Jacket")),
     Product(
         productName: "Pant",
+        onlyProductImages:[],
         productDesc: "This is Pant",
         productPrice: 20,
         productImage: "lib/assets/Products/pant.png",
@@ -35,6 +37,7 @@ class _HomePageState extends State<HomePage> {
             categoryName: "Pants")),
     Product(
         productName: "Jacket",
+        onlyProductImages:[],
         productDesc: "This is Jacket",
         productPrice: 120,
         productImage: "lib/assets/Products/jacket2.png",
@@ -43,6 +46,7 @@ class _HomePageState extends State<HomePage> {
             categoryName: "Jacket2")),
     Product(
         productName: "Dress",
+        onlyProductImages:[],
         productDesc: "This is Dress",
         productPrice: 120,
         productImage: "lib/assets/Products/dress.png",
@@ -63,6 +67,11 @@ class _HomePageState extends State<HomePage> {
 
       // Main Content of the Application
       body: Column(children: [
+
+        // TextButton(onPressed: (){
+        //   Navigator.pushNamed(context, AppRoutes.productDetailsPage);
+        // }, child: Text("Product Detail Screen")),
+
         // Adding the Search Bar with the icons
         Container(
           margin: const EdgeInsets.symmetric(horizontal: 18),

@@ -22,7 +22,7 @@ class _AccountDetailsScreenState extends State<AccountDetailsScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: CustomAppBar(
+      appBar: const CustomAppBar(
         centreTitle: true,
         title: StringResources.accountDetails,
       ) ,

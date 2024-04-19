@@ -157,102 +157,107 @@ class _HomePageState extends State<HomePage> {
             ),
             itemBuilder: (BuildContext context, int index) {
               // You can replace Container with any widget you want for each grid item
-              return Container(
-                decoration:
-                BoxDecoration(borderRadius: BorderRadius.circular(20)),
-                // color: Colors.blue, // Just for demonstration
-                child: Center(
-                  child: Stack(
-                    fit: StackFit.expand,
-                    children: [
-                      // Background Image
-                      ShaderMask(
-                        shaderCallback: (rect) =>
-                            const LinearGradient(
-                              begin: Alignment.bottomCenter,
-                              end: Alignment.center,
-                              colors: [
-                                Color.fromRGBO(255, 255, 255, 0.1),
-                                Colors.transparent,
-                              ],
-                            ).createShader(rect),
-                        blendMode: BlendMode.darken,
-                        child: Container(
-                          decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(20),
-                            image: DecorationImage(
-                              image:
-                              AssetImage(allProducts[index].productImage),
-                              fit: BoxFit.cover,
-                              colorFilter: const ColorFilter.mode(
-                                  Colors.black26, BlendMode.darken),
+              return InkWell(
+                onTap: (){
+                  Navigator.pushNamed(context, AppRoutes.productDetailsPage);
+                },
+                child: Container(
+                  decoration:
+                  BoxDecoration(borderRadius: BorderRadius.circular(20)),
+                  // color: Colors.blue, // Just for demonstration
+                  child: Center(
+                    child: Stack(
+                      fit: StackFit.expand,
+                      children: [
+                        // Background Image
+                        ShaderMask(
+                          shaderCallback: (rect) =>
+                              const LinearGradient(
+                                begin: Alignment.bottomCenter,
+                                end: Alignment.center,
+                                colors: [
+                                  Color.fromRGBO(255, 255, 255, 0.1),
+                                  Colors.transparent,
+                                ],
+                              ).createShader(rect),
+                          blendMode: BlendMode.darken,
+                          child: Container(
+                            decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(20),
+                              image: DecorationImage(
+                                image:
+                                AssetImage(allProducts[index].productImage),
+                                fit: BoxFit.cover,
+                                colorFilter: const ColorFilter.mode(
+                                    Colors.black26, BlendMode.darken),
+                              ),
                             ),
                           ),
                         ),
-                      ),
 
-                      // Content of the Product with Product Price
-                      Positioned(
+                        // Content of the Product with Product Price
+                        Positioned(
+                            bottom: 12,
+                            left: 12,
+                            child: Column(
+                              children: [
+                                Text(
+                                  allProducts[index].productName,
+                                  style: TextStyle(
+                                      color: Colors.white,
+                                      fontSize: 16,
+                                      fontWeight: FontWeight.w400),
+                                ),
+                                SizedBox(
+                                  height: 5,
+                                ),
+                                Text(
+                                  "₹ ${allProducts[index].productPrice
+                                      .toString()}",
+                                  style: TextStyle(
+                                      color: Colors.white,
+                                      fontSize: 16,
+                                      fontWeight: FontWeight.w600),
+                                )
+                              ],
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                            )),
+
+                        // Icons for the Shopping Bag
+                        Positioned(
                           bottom: 12,
-                          left: 12,
-                          child: Column(
-                            children: [
-                              Text(
-                                allProducts[index].productName,
-                                style: TextStyle(
-                                    color: Colors.white,
-                                    fontSize: 16,
-                                    fontWeight: FontWeight.w400),
-                              ),
-                              SizedBox(
-                                height: 5,
-                              ),
-                              Text(
-                                "₹ ${allProducts[index].productPrice
-                                    .toString()}",
-                                style: TextStyle(
-                                    color: Colors.white,
-                                    fontSize: 16,
-                                    fontWeight: FontWeight.w600),
-                              )
-                            ],
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                          )),
+                          right: 12,
+                          child: Container(
+                              decoration: BoxDecoration(
+                                  borderRadius: BorderRadius.circular(30),
+                                  color: Colors.black),
+                              padding: const EdgeInsets.all(10),
+                              child: SvgPicture.asset(
+                                  StringResources.shoppingIcon,
+                                  height: 15,
+                                  colorFilter: const ColorFilter.mode(
+                                      Colors.white, BlendMode.srcIn),
+                                  width: 15)),
+                        ),
 
-                      // Icons for the Shopping Bag
-                      Positioned(
-                        bottom: 12,
-                        right: 12,
-                        child: Container(
-                            decoration: BoxDecoration(
-                                borderRadius: BorderRadius.circular(30),
-                                color: Colors.black),
-                            padding: const EdgeInsets.all(10),
-                            child: SvgPicture.asset(
-                                StringResources.shoppingIcon,
-                                height: 15,
-                                colorFilter: const ColorFilter.mode(
-                                    Colors.white, BlendMode.srcIn),
-                                width: 15)),
-                      ),
-
-                      // Icons for the Favourites
-                      Positioned(
-                        top: 12,
-                        right: 12,
-                        child: Container(
-                            decoration: BoxDecoration(
-                                borderRadius: BorderRadius.circular(30),
-                                color: Colors.black),
-                            padding: const EdgeInsets.all(10),
-                            child: SvgPicture.asset(
-                                StringResources.favoriteIcon,
-                                height: 15,
-                                colorFilter: const ColorFilter.mode(
-                                    Colors.white, BlendMode.srcIn),
-                                width: 15)),
-                      )
-                    ],
+                        // Icons for the Favourites
+                        Positioned(
+                          top: 12,
+                          right: 12,
+                          child: Container(
+                              decoration: BoxDecoration(
+                                  borderRadius: BorderRadius.circular(30),
+                                  color: Colors.black),
+                              padding: const EdgeInsets.all(10),
+                              child: SvgPicture.asset(
+                                  StringResources.favoriteIcon,
+                                  height: 15,
+                                  colorFilter: const ColorFilter.mode(
+                                      Colors.white, BlendMode.srcIn),
+                                  width: 15)),
+                        )
+                      ],
+                    ),
                   ),
                 ),
               );

@@ -111,7 +111,7 @@ class ProductPage extends StatelessWidget {
 
               // Product Description
               Container(
-                margin: EdgeInsets.f,
+                margin: EdgeInsets.fromLTRB(20,0, 45, 0),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
@@ -131,13 +131,17 @@ class ProductPage extends StatelessWidget {
                           fontFamily: 'Inter'),
                       textAlign: TextAlign.start,
                     ),
+
+                    SizedBox(
+                      height: 20,
+                    ),
                     Text(
                       viewedProduct.productDesc,
                       style: const TextStyle(
                           fontSize: 12,
                           color: Color.fromRGBO(160, 160, 160, 1),
                           fontWeight: FontWeight.w400,
-                          letterSpacing: 0.3,
+                          letterSpacing: .5,
                           fontFamily: 'Inter'),
                       textAlign: TextAlign.justify,
                     ),

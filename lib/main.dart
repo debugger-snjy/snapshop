@@ -9,6 +9,7 @@ import 'package:snapshop/screens/category_screen.dart';
 import 'package:snapshop/screens/home_screen.dart';
 import 'package:snapshop/screens/login_screen.dart';
 import 'package:snapshop/screens/onboarding_screen.dart';
+import 'package:snapshop/screens/product_details_screen.dart';
 import 'package:snapshop/screens/splash_screen.dart';
 import 'package:snapshop/utils/app_routes.dart';
 
@@ -29,11 +30,13 @@ class MyApp extends StatelessWidget {
       ],
       child: MaterialApp(
         routes: {
-          AppRoutes.defaultPage: (context) => const SplashScreen(),
+          // AppRoutes.defaultPage: (context) => const SplashScreen(),
+          AppRoutes.defaultPage: (context) => const ProductPage(),
           AppRoutes.onboardingScreen: (context) => const OnBoardingScreen(),
           AppRoutes.loginPage: (context) => const LoginScreen(),
           AppRoutes.homePage: (context) => const HomePage(),
-          AppRoutes.categoryPage: (context) => const CategoryPage()
+          AppRoutes.categoryPage: (context) => const CategoryPage(),
+          AppRoutes.productDetailsPage:(context) => const ProductPage()
         },
       ),
     );

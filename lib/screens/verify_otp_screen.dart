@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_otp_text_field/flutter_otp_text_field.dart';
+import 'package:snapshop/utils/app_routes.dart';
 import 'package:snapshop/utils/strings.dart';
 import 'package:snapshop/widgets/button_dart_widget.dart';
 
@@ -55,7 +56,9 @@ class _VerifyOtpScreenState extends State<VerifyOtpScreen> {
             DarkButton(
                 radius: 20,
                 text: const Text('Verify'),
-                actions: (){},
+                actions: (){
+                  Navigator.pushNamedAndRemoveUntil(context, AppRoutes.successRegister, (route) => false);
+                },
               buttonHeight: MediaQuery.of(context).size.height*0.065,
               buttonWidth: MediaQuery.of(context).size.width*0.85,)
           ],

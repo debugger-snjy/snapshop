@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:snapshop/models/category.dart';
+import 'package:snapshop/utils/app_routes.dart';
 import 'package:snapshop/utils/strings.dart';
 
 class CategoryPage extends StatelessWidget {
@@ -31,7 +32,10 @@ class CategoryPage extends StatelessWidget {
       appBar: AppBar(
         // Adding this to remove the pink or purple color on scrolling the grid items
         scrolledUnderElevation: 0,
-        title: const Text("Categories",style: TextStyle(fontWeight: FontWeight.bold),),
+        title: const Text(
+          "Categories",
+          style: TextStyle(fontWeight: FontWeight.bold),
+        ),
         centerTitle: true,
       ),
 
@@ -53,9 +57,9 @@ class CategoryPage extends StatelessWidget {
                     ClipRRect(
                       borderRadius: BorderRadius.circular(20), // Image border
                       child: SizedBox.fromSize(
-                        size: const Size.fromRadius(48), // Image radius
-                        child: Image.asset(allCategories[index].categoryImage,height: 150,width: 150)
-                      ),
+                          size: const Size.fromRadius(48), // Image radius
+                          child: Image.asset(allCategories[index].categoryImage,
+                              height: 150, width: 150)),
                     ),
                     const SizedBox(
                       width: 20,
@@ -88,7 +92,7 @@ class CategoryPage extends StatelessWidget {
             // Active Home Icon
             InkWell(
               onTap: () {
-                Navigator.pop(context);
+                Navigator.popAndPushNamed(context, AppRoutes.homePage);
               },
               child: SvgPicture.asset(StringResources.allIcons[0],
                   height: 30,
@@ -116,7 +120,9 @@ class CategoryPage extends StatelessWidget {
 
             // Heart Icon
             InkWell(
-              onTap: () {},
+              onTap: () {
+                Navigator.popAndPushNamed(context, AppRoutes.wishlistPage);
+              },
               child: SvgPicture.asset(StringResources.allIcons[2],
                   height: 30,
                   colorFilter:
@@ -126,7 +132,9 @@ class CategoryPage extends StatelessWidget {
 
             // Shopping Bag Icon
             InkWell(
-              onTap: () {},
+              onTap: () {
+                Navigator.pushNamed(context, AppRoutes.cartPage);
+              },
               child: SvgPicture.asset(StringResources.allIcons[3],
                   height: 30,
                   colorFilter:
@@ -136,7 +144,9 @@ class CategoryPage extends StatelessWidget {
 
             // User Icon
             InkWell(
-              onTap: () {},
+              onTap: () {
+                Navigator.pushNamed(context, AppRoutes.accountPage);
+              },
               child: SvgPicture.asset(StringResources.allIcons[4],
                   height: 30,
                   colorFilter:

@@ -49,13 +49,13 @@ class CategoryTabNavigator extends ChangeNotifier {
     allItems.insert(
         index,
         Container(
-            padding: EdgeInsets.all(0),
-            margin: EdgeInsets.fromLTRB(0, 10, 16, 10),
+            padding: const EdgeInsets.all(0),
+            margin: const EdgeInsets.fromLTRB(0, 10, 16, 10),
             decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(20),
                 color: Colors.black,
                 border: Border.all(
-                    color: Color.fromRGBO(160, 160, 160, 1),
+                    color: const Color.fromRGBO(160, 160, 160, 1),
                     width: 1,
                     style: BorderStyle.solid)),
             child: TextButton(

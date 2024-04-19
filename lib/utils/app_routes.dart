@@ -10,4 +10,14 @@ class AppRoutes{
   static const String successPage= "/success";
   static const String categoryPage = "/categories";
   static const String productDetailsPage = "/productdetails";
+  static const String wishlistPage = "/wishlist";
+  static const String accountPage = "/accounts";
+  static const String forgetPassword = "/forgetpassword";
+  static const String verifyOTPPage = "/verifyOTP";
+  static const String newPasswordPage = "/newpassword";
+  static const String successRegister = "/register/success";
+  static const String accountDetails = "/accountdetails";
+  static const String paymentMode = "/payment";
+  static const String addCards = "/addCard";
+  static const String cartPage = "/cart";
 }

@@ -1,15 +1,18 @@
-import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
+import 'package:provider/provider.dart';
 import 'package:snapshop/models/category.dart';
 import 'package:snapshop/models/product.dart';
-import 'package:snapshop/utils/strings.dart';
+import 'package:snapshop/provider/sizetab_provider.dart';
+import 'package:snapshop/widgets/button_dart_widget.dart';
 
 class ProductPage extends StatelessWidget {
   const ProductPage({super.key});
 
   @override
   Widget build(BuildContext context) {
+    // final viewedProduct =
+    //     ModalRoute.of(context)!.settings.arguments as Product?;
+
     Product viewedProduct = Product(
         productName: "Sports tech",
         productDesc:
@@ -39,9 +42,9 @@ class ProductPage extends StatelessWidget {
 
       // Main Content of the Application
       body: Container(
-        // color: Colors.red,
+        color: Colors.white,
         child: Container(
-          margin: EdgeInsets.fromLTRB(0, 0, 0, 0),
+          margin: const EdgeInsets.fromLTRB(0, 0, 0, 0),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
@@ -51,28 +54,27 @@ class ProductPage extends StatelessWidget {
                 children: [
                   // ONLY Product with different Colors
                   Container(
-                    margin: EdgeInsets.fromLTRB(0, 45, 0, 0),
                     child: Column(
                       children: [
                         Container(
                             decoration: BoxDecoration(
-                                color: Color.fromRGBO(242, 242, 242, 1),
+                                color: const Color.fromRGBO(242, 242, 242, 1),
                                 borderRadius: BorderRadius.circular(10)),
-                            margin: EdgeInsets.fromLTRB(0, 16, 0, 0),
-                            padding: EdgeInsets.all(0),
+                            margin: const EdgeInsets.fromLTRB(0, 16, 0, 0),
+                            padding: const EdgeInsets.all(0),
                             height: 60,
                             width: 60,
                             child: Image.asset(
-                              viewedProduct.onlyProductImages[0]!,
+                              viewedProduct!.onlyProductImages[0]!,
                               height: 70,
                               width: 70,
                             )),
                         Container(
                             decoration: BoxDecoration(
-                                color: Color.fromRGBO(242, 242, 242, 1),
+                                color: const Color.fromRGBO(242, 242, 242, 1),
                                 borderRadius: BorderRadius.circular(10)),
-                            margin: EdgeInsets.fromLTRB(0, 16, 0, 0),
-                            padding: EdgeInsets.all(0),
+                            margin: const EdgeInsets.fromLTRB(0, 16, 0, 0),
+                            padding: const EdgeInsets.all(0),
                             height: 60,
                             width: 60,
                             child: Image.asset(
@@ -82,9 +84,9 @@ class ProductPage extends StatelessWidget {
                             )),
                         Container(
                             decoration: BoxDecoration(
-                                color: Color.fromRGBO(242, 242, 242, 1),
+                                color: const Color.fromRGBO(242, 242, 242, 1),
                                 borderRadius: BorderRadius.circular(10)),
-                            margin: EdgeInsets.fromLTRB(0, 16, 0, 0),
+                            margin: const EdgeInsets.fromLTRB(0, 16, 0, 0),
                             padding: const EdgeInsets.all(10),
                             height: 60,
                             width: 60,
@@ -98,24 +100,38 @@ class ProductPage extends StatelessWidget {
                   ),
 
                   // Product Image with Model
-                  Container(
-                      // color: Colors.blue,
-                      child: Image.asset(viewedProduct.productImage))
+                  ClipRRect(
+                    borderRadius: BorderRadius.circular(20.0),
+                    child: Image.asset(
+                      viewedProduct.productImage,
+                    ),
+                  )
+
+                  // Container(
+                  //     height: 330,
+                  //     width: 250,
+                  //     decoration: BoxDecoration(
+                  //         borderRadius: BorderRadius.circular(100)),
+                  //     child: Image.asset(
+                  //       viewedProduct.productImage,
+                  //       fit: BoxFit.fill,
+                  //     ))
                 ],
               ),
 
               // Space Between the Images and the text
-              SizedBox(
-                height: 50,
+              const SizedBox(
+                height: 0,
               ),
 
               // Product Description
               Container(
-                margin: EdgeInsets.fromLTRB(20,0, 45, 0),
+                margin: const EdgeInsets.fromLTRB(20, 0, 50, 0),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Text(
+                      softWrap: true,
                       viewedProduct.productName,
                       style: const TextStyle(
                           fontSize: 24,
@@ -132,20 +148,108 @@ class ProductPage extends StatelessWidget {
                       textAlign: TextAlign.start,
                     ),
 
-                    SizedBox(
+                    const SizedBox(
                       height: 20,
                     ),
+
                     Text(
                       viewedProduct.productDesc,
                       style: const TextStyle(
                           fontSize: 12,
                           color: Color.fromRGBO(160, 160, 160, 1),
-                          fontWeight: FontWeight.w400,
+                          fontWeight: FontWeight.w100,
                           letterSpacing: .5,
                           fontFamily: 'Inter'),
                       textAlign: TextAlign.justify,
                     ),
+
+                    const SizedBox(
+                      height: 30,
+                    ),
+                    // Size and Amount
                   ],
+                ),
+              ),
+
+              // Sizes and Tabs
+              Container(
+                margin: EdgeInsets.symmetric(horizontal: 20),
+                child: Column(
+                  children: [
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        Text(
+                          "Size",
+                          style: TextStyle(
+                              fontWeight: FontWeight.w700, fontSize: 16),
+                        ),
+                        Row(
+                          children: [
+                            Text(
+                              "EU",
+                              style: TextStyle(
+                                  fontWeight: FontWeight.w600, fontSize: 14),
+                            ),
+                            SizedBox(
+                              width: 5,
+                            ),
+                            Text(
+                              "UK",
+                              style: TextStyle(
+                                  fontWeight: FontWeight.w600,
+                                  fontSize: 14,
+                                  color: Color.fromRGBO(160, 160, 160, 1)),
+                            ),
+                            SizedBox(
+                              width: 5,
+                            ),
+                            Text(
+                              "US",
+                              style: TextStyle(
+                                  fontWeight: FontWeight.w600,
+                                  fontSize: 14,
+                                  color: Color.fromRGBO(160, 160, 160, 1)),
+                            ),
+                            SizedBox(
+                              width: 5,
+                            ),
+                          ],
+                        ),
+                      ],
+                    ),
+                    // Adding the Sizes
+                    Consumer<SizeTabNavigator>(
+                      builder: (context, value, child) => Container(
+                        height: 65,
+                        margin: const EdgeInsets.symmetric(
+                            vertical: 0, horizontal: 0),
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(20),
+                        ),
+                        child: value.showCategoryTab(),
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+
+              SizedBox(height: 10),
+
+              // Add to Cart Button
+              Center(
+                child: DarkButton(
+                  radius: 50,
+                  text: Text(
+                    "Add to Cart",
+                    style: const TextStyle(
+                        color: Colors.white,
+                        fontSize: 16,
+                        fontWeight: FontWeight.w600),
+                  ),
+                  actions: () {},
+                  buttonWidth: MediaQuery.of(context).size.width * 0.9,
+                  buttonHeight: MediaQuery.of(context).size.height * 0.075,
                 ),
               )
             ],

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:snapshop/utils/app_routes.dart';
 import 'package:snapshop/utils/strings.dart';
 import 'package:snapshop/widgets/custom_app_bar.dart';
 import 'package:snapshop/widgets/custom_tile_for_myaccount.dart';
@@ -34,20 +35,22 @@ class _MyAccountState extends State<MyAccount> {
              CustomTile(
                  image: SvgPicture.asset('lib/assets/icons/contact_icon.svg'),
                  title: StringResources.accountDetails,
-                 subtitle: StringResources.accountDetailsDescription),
+                 subtitle: StringResources.accountDetailsDescription, routeName: AppRoutes.accountDetails
+
+             ),
              CustomTile(
                  image: SvgPicture.asset('lib/assets/icons/payment_method_icon.svg'),
                  title: StringResources.paymentMethod,
-                 subtitle: StringResources.paymentMethodDescription
+                 subtitle: StringResources.paymentMethodDescription, routeName: AppRoutes.paymentMode,
              ),
              CustomTile(
                  image: SvgPicture.asset('lib/assets/icons/delivery_addresses.svg'),
                  title: StringResources.deliveryAddresses,
-                 subtitle: StringResources.deliveryAddressesDescription),
+                 subtitle: StringResources.deliveryAddressesDescription, routeName: '',),
              CustomTile(
                  image: SvgPicture.asset('lib/assets/icons/security_and_password.svg'),
                  title: StringResources.securityAndPassword,
-                 subtitle:StringResources.securityAndPasswordDescription),
+                 subtitle:StringResources.securityAndPasswordDescription, routeName: '',),
              const ListTile(
                title: Text('Settings',
                  style: TextStyle(
@@ -59,19 +62,19 @@ class _MyAccountState extends State<MyAccount> {
              CustomTile(
                  image: SvgPicture.asset('lib/assets/icons/notifications_icon.svg'),
                  title: StringResources.notitfications,
-                 subtitle: StringResources.notificationsDescription ),
+                 subtitle: StringResources.notificationsDescription, routeName: '', ),
              CustomTile(
                  image: SvgPicture.asset('lib/assets/icons/langauge_icon.svg'),
                  title: StringResources.language,
-                 subtitle: ""),
+                 subtitle: "", routeName: '',),
              CustomTile(
                  image: SvgPicture.asset('lib/assets/icons/privacy_and_policy.svg'),
                  title: StringResources.privacyAndPolicy,
-                 subtitle: ""),
+                 subtitle: "", routeName: '',),
              CustomTile(
                  image: SvgPicture.asset('lib/assets/icons/contact_us_icon.svg'),
                  title: StringResources.contactUs,
-                 subtitle: ""),
+                 subtitle: "", routeName: '',),
              LogoutButton(),
            ],
          ),

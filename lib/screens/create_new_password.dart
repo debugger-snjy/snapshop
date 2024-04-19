@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:snapshop/utils/app_routes.dart';
 import 'package:snapshop/utils/strings.dart';
 import 'package:snapshop/widgets/text_field_password.dart';
 import '../widgets/button_dart_widget.dart';
@@ -83,6 +84,8 @@ class _NewPasswordCreateScreenState extends State<NewPasswordCreateScreen> {
 
                     if (_formKey.currentState!.validate()) {
                       // Form is valid, proceed with your actions here
+                      Navigator.pushNamedAndRemoveUntil(context, AppRoutes.successRegister, (route) => false);
+
                     } else {
                       // Form is not valid, display validation errors
                       ScaffoldMessenger.of(context).showSnackBar(

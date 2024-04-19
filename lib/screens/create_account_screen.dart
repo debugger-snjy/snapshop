@@ -34,18 +34,18 @@ class _CreateAccountState extends State<CreateAccount> {
             crossAxisAlignment: CrossAxisAlignment.center,
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
-          
+
               const Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-          
+
                   Text(StringResources.createAccountMessage, style: TextStyle(fontSize: 35),),
                   Text(StringResources.createAccountMiscText,style: TextStyle(fontSize: 15,color: Colors.black26),),
                 ],
               ),
               //Username
-              CustomTextField(controller: usernameEditingController, 
-                  radius: 10, 
+              CustomTextField(controller: usernameEditingController,
+                  radius: 10,
                   text: StringResources.usernameFieldText,
                   validator: (value){
                     if (value!.isEmpty) {
@@ -66,8 +66,8 @@ class _CreateAccountState extends State<CreateAccount> {
               ),
               //Email
               CustomTextField(
-                  controller: emailTextEditingController, 
-                  radius: 10, 
+                  controller: emailTextEditingController,
+                  radius: 10,
                   text:Texts.email,
                   validator: (value){
                     const pattern = r"(?:[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'"
@@ -86,8 +86,8 @@ class _CreateAccountState extends State<CreateAccount> {
               ),
               //Password
               CustomPasswordField(
-                  controller: passwordTextEditingController, 
-                  radius: 10, 
+                  controller: passwordTextEditingController,
+                  radius: 10,
                   text: Texts.password,
                   validator: (value){
                     if (value == null || value.isEmpty) {
@@ -112,9 +112,9 @@ class _CreateAccountState extends State<CreateAccount> {
                 ],
               ),
               DividerWithText(text: "Or Sign in with"),
-          
-          
-          
+
+
+
               Button(radius: 30,text: const Text(Texts.signInFacebook,style: TextStyle(color: Colors.black),),actions: (){},
                 image: SvgPicture.asset("lib/assets/icons/facebook_icon.svg"),  buttonHeight: MediaQuery.of(context).size.height*0.065,
                 buttonWidth: MediaQuery.of(context).size.width*0.7,),
@@ -128,7 +128,7 @@ class _CreateAccountState extends State<CreateAccount> {
                 radius: 10, text: const Text(Texts.signUpMessage),
                 actions: (){
                   if (_formKey.currentState!.validate()) {
-                    // Form is valid, proceed with your actions here
+                    Navigator.pushNamed(context, AppRoutes.verifyOTPPage);
                   } else {
                     // Form is not valid, display validation errors
                     ScaffoldMessenger.of(context).showSnackBar(
@@ -151,8 +151,8 @@ class _CreateAccountState extends State<CreateAccount> {
                   ],
                 ),
               )
-          
-          
+
+
             ],
           ),
         ),

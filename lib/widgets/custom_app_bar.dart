@@ -7,6 +7,7 @@ class CustomAppBar extends StatelessWidget implements PreferredSize {
   @override
   Widget build(BuildContext context) {
     return AppBar(
+      scrolledUnderElevation: 0,
       centerTitle: centreTitle,
       title:Text(title,
       style: const TextStyle(

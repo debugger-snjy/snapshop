@@ -19,8 +19,12 @@ class _HomePageState extends State<HomePage> {
   List<Product> allProducts = [
     Product(
         productName: "Jacket",
-        onlyProductImages:[],
-        productDesc: "This is Jacket",
+        onlyProductImages: [
+          "lib/assets/Products/shoe_1.png",
+          "lib/assets/Products/shoe_2.png",
+          "lib/assets/Products/shoe_3.png",
+        ],
+        productDesc: "Elevate your style with our sleek and versatile jacket, crafted for comfort and durability. Perfect for any occasion, this jacket is a wardrobe essential.",
         productPrice: 120,
         productImage: "lib/assets/Products/jacket.png",
         productCategory: ProductCategory(
@@ -28,8 +32,12 @@ class _HomePageState extends State<HomePage> {
             categoryName: "Jacket")),
     Product(
         productName: "Pant",
-        onlyProductImages:[],
-        productDesc: "This is Pant",
+        onlyProductImages: [
+          "lib/assets/Products/shoe_1.png",
+          "lib/assets/Products/shoe_2.png",
+          "lib/assets/Products/shoe_3.png",
+        ],
+        productDesc: "Experience unmatched comfort and style with our premium pants. Tailored for a perfect fit, these pants blend sophistication with everyday ease, making them a must-have in your wardrobe.",
         productPrice: 20,
         productImage: "lib/assets/Products/pant.png",
         productCategory: ProductCategory(
@@ -37,8 +45,12 @@ class _HomePageState extends State<HomePage> {
             categoryName: "Pants")),
     Product(
         productName: "Jacket",
-        onlyProductImages:[],
-        productDesc: "This is Jacket",
+        onlyProductImages: [
+          "lib/assets/Products/shoe_1.png",
+          "lib/assets/Products/shoe_2.png",
+          "lib/assets/Products/shoe_3.png",
+        ],
+        productDesc: "Elevate your style with our sleek and versatile jacket, crafted for comfort and durability. Perfect for any occasion, this jacket is a wardrobe essential.",
         productPrice: 120,
         productImage: "lib/assets/Products/jacket2.png",
         productCategory: ProductCategory(
@@ -46,7 +58,11 @@ class _HomePageState extends State<HomePage> {
             categoryName: "Jacket2")),
     Product(
         productName: "Dress",
-        onlyProductImages:[],
+        onlyProductImages: [
+          "lib/assets/Products/shoe_1.png",
+          "lib/assets/Products/shoe_2.png",
+          "lib/assets/Products/shoe_3.png",
+        ],
         productDesc: "This is Dress",
         productPrice: 120,
         productImage: "lib/assets/Products/dress.png",
@@ -159,7 +175,7 @@ class _HomePageState extends State<HomePage> {
               // You can replace Container with any widget you want for each grid item
               return InkWell(
                 onTap: (){
-                  Navigator.pushNamed(context, AppRoutes.productDetailsPage);
+                  Navigator.pushNamed(context, AppRoutes.productDetailsPage,arguments: allProducts[index]);
                 },
                 child: Container(
                   decoration:
@@ -295,7 +311,7 @@ class _HomePageState extends State<HomePage> {
             // Category Icon
             InkWell(
               onTap: () {
-                Navigator.pushNamed(context, AppRoutes.categoryPage);
+                Navigator.popAndPushNamed(context, AppRoutes.categoryPage);
               },
               child: Container(
                 // padding: const EdgeInsets.all(10),
@@ -309,7 +325,7 @@ class _HomePageState extends State<HomePage> {
             // Heart Icon
             InkWell(
               onTap: () {
-
+                Navigator.popAndPushNamed(context, AppRoutes.wishlistPage);
               },
               child: Container(
                 // padding: const EdgeInsets.all(10),
@@ -323,6 +339,7 @@ class _HomePageState extends State<HomePage> {
             // Shopping Bag Icon
             InkWell(
               onTap: () {
+                Navigator.popAndPushNamed(context, AppRoutes.cartPage);
 
               },
               child: Container(
@@ -337,6 +354,7 @@ class _HomePageState extends State<HomePage> {
             // User Icon
             InkWell(
               onTap: () {
+                Navigator.pushNamed(context, AppRoutes.accountPage);
 
               },
               child: Container(

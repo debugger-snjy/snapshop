@@ -16,7 +16,7 @@ class ProductPage extends StatelessWidget {
             "Sports tech. Street smarts. Made in Portugal, Bolster blends luxurious leathers to everyday cool. Be bold. Be you.",
         productPrice: 457.800,
         productImage: "lib/assets/ProductWithModel/shoe_model1.png",
-        onlyProductImages : [
+        onlyProductImages: [
           "lib/assets/Products/shoe_1.png",
           "lib/assets/Products/shoe_2.png",
           "lib/assets/Products/shoe_3.png",
@@ -39,23 +39,115 @@ class ProductPage extends StatelessWidget {
 
       // Main Content of the Application
       body: Container(
-        color: Colors.transparent,
-        child: Row(
-          mainAxisAlignment: MainAxisAlignment.center,
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Column(
-              children: [
-                Container(color:Colors.transparent,height: 80,width: 80,child:Image.asset(viewedProduct.onlyProductImages[0]!)),
-                Container(color:Colors.transparent,height: 80,width: 80,child:Image.asset(viewedProduct.onlyProductImages[1]!)),
-                Container(color:Colors.transparent,height: 80,width: 80,child:Image.asset(viewedProduct.onlyProductImages[2]!)),
-              ],
-            ),
-            Container(color:Colors.transparent,child: Image.asset(viewedProduct.productImage))
-          ],
+        // color: Colors.red,
+        child: Container(
+          margin: EdgeInsets.fromLTRB(0, 0, 0, 0),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: [
+                  // ONLY Product with different Colors
+                  Container(
+                    margin: EdgeInsets.fromLTRB(0, 45, 0, 0),
+                    child: Column(
+                      children: [
+                        Container(
+                            decoration: BoxDecoration(
+                                color: Color.fromRGBO(242, 242, 242, 1),
+                                borderRadius: BorderRadius.circular(10)),
+                            margin: EdgeInsets.fromLTRB(0, 16, 0, 0),
+                            padding: EdgeInsets.all(0),
+                            height: 60,
+                            width: 60,
+                            child: Image.asset(
+                              viewedProduct.onlyProductImages[0]!,
+                              height: 70,
+                              width: 70,
+                            )),
+                        Container(
+                            decoration: BoxDecoration(
+                                color: Color.fromRGBO(242, 242, 242, 1),
+                                borderRadius: BorderRadius.circular(10)),
+                            margin: EdgeInsets.fromLTRB(0, 16, 0, 0),
+                            padding: EdgeInsets.all(0),
+                            height: 60,
+                            width: 60,
+                            child: Image.asset(
+                              viewedProduct.onlyProductImages[1]!,
+                              height: 70,
+                              width: 70,
+                            )),
+                        Container(
+                            decoration: BoxDecoration(
+                                color: Color.fromRGBO(242, 242, 242, 1),
+                                borderRadius: BorderRadius.circular(10)),
+                            margin: EdgeInsets.fromLTRB(0, 16, 0, 0),
+                            padding: const EdgeInsets.all(10),
+                            height: 60,
+                            width: 60,
+                            child: Image.asset(
+                              viewedProduct.onlyProductImages[2]!,
+                              height: 70,
+                              width: 70,
+                            )),
+                      ],
+                    ),
+                  ),
+
+                  // Product Image with Model
+                  Container(
+                      // color: Colors.blue,
+                      child: Image.asset(viewedProduct.productImage))
+                ],
+              ),
+
+              // Space Between the Images and the text
+              SizedBox(
+                height: 50,
+              ),
+
+              // Product Description
+              Container(
+                margin: EdgeInsets.f,
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text(
+                      viewedProduct.productName,
+                      style: const TextStyle(
+                          fontSize: 24,
+                          fontWeight: FontWeight.w700,
+                          fontFamily: 'Inter'),
+                      textAlign: TextAlign.start,
+                    ),
+                    Text(
+                      "₹ ${viewedProduct.productPrice}",
+                      style: const TextStyle(
+                          fontSize: 24,
+                          fontWeight: FontWeight.w700,
+                          fontFamily: 'Inter'),
+                      textAlign: TextAlign.start,
+                    ),
+                    Text(
+                      viewedProduct.productDesc,
+                      style: const TextStyle(
+                          fontSize: 12,
+                          color: Color.fromRGBO(160, 160, 160, 1),
+                          fontWeight: FontWeight.w400,
+                          letterSpacing: 0.3,
+                          fontFamily: 'Inter'),
+                      textAlign: TextAlign.justify,
+                    ),
+                  ],
+                ),
+              )
+            ],
+          ),
         ),
       ),
-
 
       // Bottom Navigation Not Needed Here
     );

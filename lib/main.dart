@@ -30,7 +30,8 @@ class MyApp extends StatelessWidget {
       ],
       child: MaterialApp(
         routes: {
-          AppRoutes.defaultPage: (context) => const SplashScreen(),
+          // AppRoutes.defaultPage: (context) => const SplashScreen(),
+          AppRoutes.defaultPage: (context) => const ProductPage(),
           AppRoutes.onboardingScreen: (context) => const OnBoardingScreen(),
           AppRoutes.loginPage: (context) => const LoginScreen(),
           AppRoutes.homePage: (context) => const HomePage(),

@@ -17,6 +17,7 @@ import 'package:snapshop/screens/home_screen.dart';
 import 'package:snapshop/screens/login_screen.dart';
 import 'package:snapshop/screens/my_account_screen.dart';
 import 'package:snapshop/screens/onboarding_screen.dart';
+import 'package:snapshop/screens/order_success_screen.dart';
 import 'package:snapshop/screens/payment_method_screen.dart';
 import 'package:snapshop/screens/product_details_screen.dart';
 import 'package:snapshop/screens/registration_success_screen.dart';
@@ -60,6 +61,7 @@ class MyApp extends StatelessWidget {
           AppRoutes.paymentMode:(context)=>const PaymentMethodScreen(),
           AppRoutes.addCards:(context)=>const AddMoreCards(),
           AppRoutes.cartPage:(context)=>const CartPage(),
+          AppRoutes.orderSuccessPage:(context)=>const OrderSuccessScreen(),
           AppRoutes.newPasswordPage: (context) =>
               const NewPasswordCreateScreen(),
         },

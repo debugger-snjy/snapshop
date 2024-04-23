@@ -20,4 +20,5 @@ class AppRoutes{
   static const String paymentMode = "/payment";
   static const String addCards = "/addCard";
   static const String cartPage = "/cart";
+  static const String orderSuccessPage = "/order/success/";
 }

@@ -12,6 +12,7 @@ import 'package:snapshop/screens/cart_screen.dart';
 import 'package:snapshop/screens/category_screen.dart';
 import 'package:snapshop/screens/create_account_screen.dart';
 import 'package:snapshop/screens/create_new_password.dart';
+import 'package:snapshop/screens/delivery_address_screen.dart';
 import 'package:snapshop/screens/forgot_password_screen.dart';
 import 'package:snapshop/screens/home_screen.dart';
 import 'package:snapshop/screens/login_screen.dart';
@@ -62,6 +63,7 @@ class MyApp extends StatelessWidget {
           AppRoutes.addCards:(context)=>const AddMoreCards(),
           AppRoutes.cartPage:(context)=>const CartPage(),
           AppRoutes.orderSuccessPage:(context)=>const OrderSuccessScreen(),
+          AppRoutes.deliveryScreenPage:(context)=>const DeliveryAddress(),
           AppRoutes.newPasswordPage: (context) =>
               const NewPasswordCreateScreen(),
         },

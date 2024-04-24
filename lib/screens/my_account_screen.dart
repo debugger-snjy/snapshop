@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:snapshop/utils/app_routes.dart';
@@ -46,7 +47,7 @@ class _MyAccountState extends State<MyAccount> {
              CustomTile(
                  image: SvgPicture.asset('lib/assets/icons/delivery_addresses.svg'),
                  title: StringResources.deliveryAddresses,
-                 subtitle: StringResources.deliveryAddressesDescription, routeName: '',),
+                 subtitle: StringResources.deliveryAddressesDescription, routeName: AppRoutes.deliveryScreenPage,),
              CustomTile(
                  image: SvgPicture.asset('lib/assets/icons/security_and_password.svg'),
                  title: StringResources.securityAndPassword,

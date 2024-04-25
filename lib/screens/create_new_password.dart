@@ -18,6 +18,7 @@ class _NewPasswordCreateScreenState extends State<NewPasswordCreateScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.white,
       appBar: AppBar(),
       body: Padding(
         padding: const EdgeInsets.all(20.0),

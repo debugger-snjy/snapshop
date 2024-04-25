@@ -93,4 +93,7 @@ class StringResources {
     "lib/assets/icons/shopping_bag_icon.svg",
     "lib/assets/icons/user_icon.svg",
   ];
+
+  static const orderSuccess="Order Successful!";
+  static const orderSuccessMessage="You have successfully made order";
 }

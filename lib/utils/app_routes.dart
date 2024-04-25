@@ -20,4 +20,11 @@ class AppRoutes{
   static const String paymentMode = "/payment";
   static const String addCards = "/addCard";
   static const String cartPage = "/cart";
+  static const String orderSuccessPage = "/order/success/";
+  static const String deliveryScreenPage = "/deliveryaddress";
+  static const String changePasswordPage = "/change/password";
+  static const String notificationPage = "/notifications";
+  static const String languagePage = "/language";
+  static const String privacyPolicyScreen = "/privacypolicy";
+  static const String contactScreen = "/contact";
 }

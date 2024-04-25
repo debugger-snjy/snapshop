@@ -74,9 +74,11 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.white,
       // App Bar of the Application
       appBar: AppBar(
         // Adding this to remove the pink or purple color on scrolling the grid items
+        backgroundColor: Colors.white,
         scrolledUnderElevation: 0,
         title: const Text(StringResources.appname),
       ),

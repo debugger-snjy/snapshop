@@ -10,16 +10,21 @@ import 'package:snapshop/screens/account_details_screen.dart';
 import 'package:snapshop/screens/add_new_card_screen.dart';
 import 'package:snapshop/screens/cart_screen.dart';
 import 'package:snapshop/screens/category_screen.dart';
+import 'package:snapshop/screens/change_password_screen.dart';
+import 'package:snapshop/screens/contact_us_screen.dart';
 import 'package:snapshop/screens/create_account_screen.dart';
 import 'package:snapshop/screens/create_new_password.dart';
 import 'package:snapshop/screens/delivery_address_screen.dart';
 import 'package:snapshop/screens/forgot_password_screen.dart';
 import 'package:snapshop/screens/home_screen.dart';
+import 'package:snapshop/screens/language_screen.dart';
 import 'package:snapshop/screens/login_screen.dart';
 import 'package:snapshop/screens/my_account_screen.dart';
+import 'package:snapshop/screens/notification_screen.dart';
 import 'package:snapshop/screens/onboarding_screen.dart';
 import 'package:snapshop/screens/order_success_screen.dart';
 import 'package:snapshop/screens/payment_method_screen.dart';
+import 'package:snapshop/screens/privacy_policy_screen.dart';
 import 'package:snapshop/screens/product_details_screen.dart';
 import 'package:snapshop/screens/registration_success_screen.dart';
 import 'package:snapshop/screens/splash_screen.dart';
@@ -58,14 +63,20 @@ class MyApp extends StatelessWidget {
           AppRoutes.forgetPassword: (context) => const ForgotPasswordScreen(),
           AppRoutes.verifyOTPPage: (context) => const VerifyOtpScreen(),
           AppRoutes.successRegister: (context) => const SuccessScreen(),
-          AppRoutes.accountDetails:(context)=>const AccountDetailsScreen(),
-          AppRoutes.paymentMode:(context)=>const PaymentMethodScreen(),
-          AppRoutes.addCards:(context)=>const AddMoreCards(),
-          AppRoutes.cartPage:(context)=>const CartPage(),
-          AppRoutes.orderSuccessPage:(context)=>const OrderSuccessScreen(),
-          AppRoutes.deliveryScreenPage:(context)=>const DeliveryAddress(),
+          AppRoutes.accountDetails: (context) => const AccountDetailsScreen(),
+          AppRoutes.paymentMode: (context) => const PaymentMethodScreen(),
+          AppRoutes.addCards: (context) => const AddMoreCards(),
+          AppRoutes.cartPage: (context) => const CartPage(),
+          AppRoutes.orderSuccessPage: (context) => const OrderSuccessScreen(),
+          AppRoutes.deliveryScreenPage: (context) => const DeliveryAddress(),
           AppRoutes.newPasswordPage: (context) =>
               const NewPasswordCreateScreen(),
+          AppRoutes.changePasswordPage: (context) =>
+              const ChangePasswordScreen(),
+          AppRoutes.notificationPage: (context) => const NotificationScreen(),
+          AppRoutes.languagePage:(context)=>const LanguageScreen(),
+          AppRoutes.privacyPolicyScreen:(context)=>const PrivacyPolicyScreen(),
+          AppRoutes.contactScreen:(context)=>const ContactUsScreen(),
         },
       ),
     );

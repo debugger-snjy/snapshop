@@ -34,11 +34,12 @@ class WishlistScreen extends StatelessWidget {
     ];
 
     return Scaffold(
+      backgroundColor: Colors.white,
       // App Bar of the Application
       appBar: AppBar(
         // Adding this to remove the pink or purple color on scrolling the grid items
-        scrolledUnderElevation: 0,
         backgroundColor: Colors.white,
+        scrolledUnderElevation: 0,
         title: const Text("Wishlist"),
       ),
 

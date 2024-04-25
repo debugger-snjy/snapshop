@@ -12,6 +12,7 @@ class _DeliveryAddressState extends State<DeliveryAddress> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.white,
         appBar: const CustomAppBar(
           centreTitle: true,
           title: "Delivery Address",

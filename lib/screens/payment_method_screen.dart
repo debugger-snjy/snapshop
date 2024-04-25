@@ -44,6 +44,7 @@ class _PaymentMethodScreenState extends State<PaymentMethodScreen> {
                             cardHolderName: "xxxxxxx",
                             cvvCode: "xxxxx",
                             showBackView: false,
+                            cardBgColor: Colors.black,
                             onCreditCardWidgetChange:
                                 (CreditCardBrand brand) {}),
                         CreditCardWidget(
